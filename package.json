@@ -8,7 +8,11 @@
     "start:dev": "nodemon src/index.js"
   },
   "keywords": [
-    "discord", "discord.js", "discord bot", "discord music player", "discord youtube player"
+    "discord",
+    "discord.js",
+    "discord bot",
+    "discord music player",
+    "discord youtube player"
   ],
   "author": "Nejdet Kadir Bektaş",
   "license": "MIT",
@@ -17,7 +21,8 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.8",
-    "ytdl-core": "^4.5.0"
+    "ytdl-core": "^4.5.0",
+    "ytsr": "^3.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
