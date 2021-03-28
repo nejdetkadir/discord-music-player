@@ -32,6 +32,13 @@ client.on('message', async msg => {
         } else {
           msg.reply('You need to join a voice channel first!');
         }
+      } else if (args.length == 0 && (COMMAND == "disconnect" || COMMAND == "disc")) {
+        if (client.voice.connections.size > 0) {
+          msg.guild.me.voice.channel.leave()
+          msg.reply("Successfully disconnected")
+        } else {
+          msg.reply("I am not working!")
+        }       
       } else {
         msg.reply("i can't help you :(")
       }
