@@ -1,19 +1,25 @@
 {
   "name": "discord-music-player",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sample music player bot for Discord",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "discord", "discord.js", "discord bot", "discord music player", "discord youtube player"
+  ],
+  "author": "Nejdet Kadir Bektaş",
+  "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.8",
     "ytdl-core": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
