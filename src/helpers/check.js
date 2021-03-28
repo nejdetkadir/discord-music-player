@@ -29,8 +29,11 @@ exports.searchVideo = async (args) => {
   return result.items[0]
 }
 
-exports.playMusicWithUrl = async (url, msg) => {
+exports.playMusicWithUrl = async (url, msg, isWorking) => {
   if (ytdl.validateURL(url)) {
+    if (isWorking) {
+      this.disconnectFromChannel(msg, false)
+    }
     try {
       const songInfo = await ytdl.getInfo(url)
       const connection = await msg.member.voice.channel.join()

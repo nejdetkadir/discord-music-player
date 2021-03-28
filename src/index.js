@@ -13,22 +13,16 @@ client.on('message', msg => {
     if (COMMAND) {
       if (args.length == 1 && COMMAND == "play") {
         if (check.userOnVoiceChannel(msg)) {
-          if (client.voice.connections.size == 0) {
-            check.playMusicWithUrl(args[0], msg)
-          } else {
-            msg.reply("I am already working!")
-          }          
+          check.playMusicWithUrl(args[0], msg, check.isWorking(client, msg, false))  
         }
       } else if (args.length == 0 && (COMMAND == "disconnect" || COMMAND == "disc")) {
         if (check.isWorking(client, msg, true)) {
           check.disconnectFromChannel(msg, true)
         }      
       } else if (args.length > 0 && COMMAND == "search") {
-        if (!check.isWorking(client, msg, false)) {
-          check.searchVideo(args).then(res => {
-            check.playMusicWithUrl(res.url, msg)
-          })
-        }
+        check.searchVideo(args).then(res => {
+          check.playMusicWithUrl(res.url, msg, check.isWorking(client, msg, false))
+        })
       } else {
         msg.reply("i can't help you :(")
       }
