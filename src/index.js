@@ -8,7 +8,16 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (!msg.author.bot && msg.content.startsWith(process.env.PREFIX)) {
-    msg.reply("i am here")
+    const [COMMAND, ...args] = msg.content.trim().substring(process.env.PREFIX.length).split(/\s+/);
+    if (COMMAND) {
+      if (args.length == 0) {
+        msg.reply("What do u want ?")
+      } else if (args.length == 1) {
+        msg.reply("i can play a song for you :)")
+      } else {
+        msg.reply("i can't help you :(")
+      }
+    }
   }
 });
 
