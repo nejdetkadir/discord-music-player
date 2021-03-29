@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 require('dotenv').config()
-const check = require("./helpers/check")
+const check = require("./helper")
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
