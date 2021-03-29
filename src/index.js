@@ -20,9 +20,11 @@ client.on('message', msg => {
           check.disconnectFromChannel(msg, true)
         }      
       } else if (args.length > 0 && COMMAND == "search") {
-        check.searchVideo(args).then(res => {
-          check.playMusicWithUrl(res.url, msg, check.isWorking(client, msg, false))
-        })
+        if (check.userOnVoiceChannel(msg)) {
+          check.searchVideo(args).then(res => {
+            check.playMusicWithUrl(res.url, msg, check.isWorking(client, msg, false))
+          })
+        }        
       } else {
         msg.reply("i can't help you :(")
       }
