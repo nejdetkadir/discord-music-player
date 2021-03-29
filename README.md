@@ -11,7 +11,7 @@ Commands
 - disc / disconnect (disconnect from channel)
 
 ## Preview
-You can watch preview from [here](https://www.youtube.com/watch?v=DH_2qF1NW6k)
+You can watch preview from [here](https://youtu.be/Knnk6gsUBLQ)
 
 ### Examples
 I will use '!' as default prefix
